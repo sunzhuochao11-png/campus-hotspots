@@ -1,0 +1,244 @@
+/* =============================================
+   My Campus Hotspots — one stylesheet for all pages
+   Common rules first, page-specific rules below.
+   ============================================= */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  line-height: 1.7;
+}
+
+/* Single-column centred layout */
+.page {
+  width: 92%;
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 2rem 0;
+}
+
+header {
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid currentColor;
+}
+
+h1 {
+  margin: 0.25rem 0;
+  line-height: 1.2;
+}
+
+h2 {
+  margin-top: 0;
+  line-height: 1.3;
+}
+
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1rem;
+  padding: 1rem 0;
+}
+
+nav a {
+  color: inherit;
+  text-decoration: none;
+}
+
+footer {
+  margin-top: 2rem;
+  padding-top: 1rem;
+  border-top: 1px solid currentColor;
+  font-size: 0.9rem;
+}
+
+footer nav {
+  padding: 0.5rem 0 1rem;
+}
+
+.panel {
+  margin: 1.5rem 0;
+  padding: 1.5rem;
+}
+
+aside.panel {
+  font-size: 0.95rem;
+}
+
+figure {
+  margin: 1rem 0;
+}
+
+figcaption {
+  font-size: 0.85rem;
+  margin-top: 0.4rem;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  color: inherit;
+}
+
+.action {
+  display: inline-block;
+  margin-top: 0.5rem;
+  padding: 0.7em 1em;
+  border: 2px solid currentColor;
+  border-radius: 8px;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+a:focus-visible {
+  outline: 3px solid currentColor;
+  outline-offset: 4px;
+}
+
+/* ===============================
+   Front page — "travel guide" mood:
+   warm paper background, big title,
+   generous spacing, cards with rules.
+   =============================== */
+.page-home {
+  background-color: #fdfaf3;
+  color: #17223b;
+}
+
+.page-home h1 {
+  font-size: 2.6rem;
+}
+
+.page-home .places {
+  margin-top: 1rem;
+}
+
+.page-home .place-card {
+  margin: 1.5rem 0;
+  padding-bottom: 1.25rem;
+  border-bottom: 2px solid #17223b;
+}
+
+.page-home .place-card:last-child {
+  border-bottom: none;
+}
+
+.page-home .place-card img {
+  border-radius: 12px;
+}
+
+/* ===============================
+   Canteen — "cozy dining" mood:
+   warm cream, soft rounded panels.
+   =============================== */
+.page-canteen {
+  background-color: #fff5e6;
+  color: #6b3d0d;
+}
+
+.page-canteen h1 {
+  font-size: 2.2rem;
+}
+
+.page-canteen .panel {
+  background-color: #ffffff;
+  border-radius: 20px;
+}
+
+/* ===============================
+   Classroom — "clean & bright" mood:
+   cool paper, crisp straight borders.
+   =============================== */
+.page-classroom {
+  background-color: #f0f6fb;
+  color: #18435f;
+}
+
+.page-classroom h1 {
+  font-size: 2.2rem;
+}
+
+.page-classroom .panel {
+  background-color: #ffffff;
+  border: 1px solid #9db8cc;
+  border-radius: 4px;
+}
+
+/* ===============================
+   Teaching Building — "scholarly" mood:
+   deep navy night, gold accent,
+   serif headings, square corners.
+   =============================== */
+.page-teaching {
+  background-color: #1f2438;
+  color: #e9e6da;
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+.page-teaching h1 {
+  font-size: 2.4rem;
+  color: #ffd166;
+}
+
+.page-teaching .panel {
+  background-color: #2a3049;
+  border-left: 5px solid #ffd166;
+  border-radius: 2px;
+}
+
+/* =============================================
+   Mobile rules — applied to all pages
+   ============================================= */
+@media (max-width: 600px) {
+  .page {
+    width: 94%;
+    padding: 1rem 0;
+  }
+
+  .panel {
+    padding: 1rem;
+    margin: 1rem 0;
+  }
+
+  h1 {
+    font-size: 1.8rem;
+  }
+
+  .page-home h1 {
+    font-size: 2rem;
+  }
+
+  nav {
+    gap: 0.35rem 0.75rem;
+  }
+
+  footer nav {
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  .action {
+    display: block;
+    text-align: center;
+    padding: 1em;
+  }
+}
+
+/* =============================================
+   Print rules
+   ============================================= */
+@media print {
+  .action {
+    border: 1px solid currentColor;
+  }
+}
