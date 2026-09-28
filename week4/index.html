@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Week 4 · Campus Explorer</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="app.js" defer></script>
+  </head>
+  <body class="explorer">
+    <div class="wrap">
+      <header>
+        <h1>Campus Explorer</h1>
+        <p>Three places on one screen — tap a button to switch the place and its map without reloading the page.</p>
+      </header>
+
+      <nav class="place-buttons" aria-label="Choose a place">
+        <button type="button" class="place-btn" data-place="canteen" aria-pressed="true">Canteen</button>
+        <button type="button" class="place-btn" data-place="classroom" aria-pressed="false">Classroom</button>
+        <button type="button" class="place-btn" data-place="teaching" aria-pressed="false">Teaching Building</button>
+      </nav>
+
+      <main class="grid">
+        <!-- Three place descriptions; only one is shown at a time. -->
+        <div class="place-list">
+          <section id="canteen" class="place">
+            <h2>Canteen</h2>
+            <figure>
+              <img src="../canteen.jpg" alt="A table inside the school canteen where students have meals">
+              <figcaption>The canteen, where meals are served every day.</figcaption>
+            </figure>
+            <p>It's where students and teachers have meals. It is on the first and second floors of Building B, and you can eat there.</p>
+            <p class="reason"><strong>Why I recommend it:</strong> it gets busy at lunch time, so go a little early if you want a seat — the warm atmosphere is worth it.</p>
+            <a class="action" href="https://maps.app.goo.gl/9zi9AmjWP95d2DLd6" target="_blank" rel="noopener">Open the canteen on the map</a>
+          </section>
+
+          <section id="classroom" class="place" hidden>
+            <h2>Classroom</h2>
+            <figure>
+              <img src="../classroom.jpg" alt="Desks and chairs in our classroom with a board at the front">
+              <figcaption>Our classroom, where most classes take place.</figcaption>
+            </figure>
+            <p>This is our classroom. Everyone usually has classes here, and the environment is really nice.</p>
+            <p class="reason"><strong>Why I recommend it:</strong> the seats near the window have the best light in the afternoon, so it's a comfortable place to study.</p>
+            <a class="action" href="https://maps.app.goo.gl/4R5vcSLiZbNMoRoy9" target="_blank" rel="noopener">Open the classroom on the map</a>
+          </section>
+
+          <section id="teaching" class="place" hidden>
+            <h2>Teaching Building</h2>
+            <figure>
+              <img src="../teaching-building.jpg" alt="Exterior view of the school teaching building">
+              <figcaption>The teaching building seen from outside.</figcaption>
+            </figure>
+            <p>This is our school's teaching building, where everyone usually goes to classes. The building is the heart of the campus.</p>
+            <p class="reason"><strong>Why I recommend it:</strong> arrive between classes if you want to walk the halls without the crowd.</p>
+            <a class="action" href="https://maps.app.goo.gl/b8E72CpA3tHb7sZW9" target="_blank" rel="noopener">Open the teaching building on the map</a>
+          </section>
+        </div>
+
+        <section class="map-panel">
+          <h2>Where it is</h2>
+          <iframe id="map" title="Map of the selected place" src="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+        </section>
+      </main>
+
+      <footer>
+        <nav class="page-links" aria-label="Other week 4 pages">
+          <a href="statistics.html">See the data</a>
+          <a href="game.html">Play the game</a>
+          <a href="../index.html">Back to the home page</a>
+        </nav>
+        <p>Photos: taken by myself · Map: Google Maps</p>
+      </footer>
+    </div>
+  </body>
+</html>

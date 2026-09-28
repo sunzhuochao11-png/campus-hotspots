@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Week 4 · Population Statistics</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.8/dist/chart.umd.min.js" defer></script>
+    <script src="statistics.js" defer></script>
+  </head>
+  <body>
+    <div class="wrap">
+      <header>
+        <h1>Population, seen two ways</h1>
+        <p>Two charts drawn from one public CSV — World Bank population data, tidy-up by DataHub.</p>
+      </header>
+
+      <nav class="tabs" aria-label="Choose a chart">
+        <button type="button" class="tab-btn" data-panel="panel-line" aria-pressed="true">Korea &amp; Japan over time</button>
+        <button type="button" class="tab-btn" data-panel="panel-bar" aria-pressed="false">Most populous countries, 2024</button>
+      </nav>
+
+      <div id="panel-line">
+        <section class="chart-card">
+          <h2>South Korea and Japan, 1960–2024</h2>
+          <canvas id="chart-line" aria-label="Line chart of South Korea and Japan population from 1960 to 2024" role="img"></canvas>
+          <p class="meta">Unit: people &nbsp;·&nbsp; Period: 1960–2024 &nbsp;·&nbsp; Source: <a href="https://datahub.io/core/population" target="_blank" rel="noopener">DataHub (original data: World Bank)</a>. Raw file: <a href="data/population.csv" download>population.csv</a></p>
+          <div class="interpret">
+            <h3>What I see</h3>
+            <p>This line chart compares the total population of South Korea (KOR) and Japan (JPN) from 1960 to 2024. Japan has been roughly 2.4 times larger than South Korea for the whole period. Japan kept growing slowly until around 2010, then levelled off and began to edge downward. South Korea's population climbed steadily until the mid-2020s and has only just started to flatten. Because the two countries grew at similar rates for decades, the gap between the lines stayed fairly constant.</p>
+            <p><strong>Limits:</strong> this chart shows only the total number of people — it cannot explain why the change happened (birth rate, ageing, migration), nor show the age structure behind each total.</p>
+          </div>
+        </section>
+      </div>
+
+      <div id="panel-bar" hidden>
+        <section class="chart-card">
+          <h2>Ten most populous countries, 2024</h2>
+          <canvas id="chart-bar" aria-label="Bar chart of the ten most populous countries in 2024" role="img"></canvas>
+          <p class="meta">Unit: people &nbsp;·&nbsp; Year: 2024 &nbsp;·&nbsp; Source: <a href="https://datahub.io/core/population" target="_blank" rel="noopener">DataHub (original data: World Bank)</a>. Raw file: <a href="data/population.csv" download>population.csv</a></p>
+          <div class="interpret">
+            <h3>What I see</h3>
+            <p>This bar chart compares the 2024 population of the ten most populous countries. India (about 1.45 billion) has just overtaken China (about 1.41 billion), and the two stand far above everyone else — the United States is third at about 340 million, less than a quarter of either of them. Just two countries therefore hold more than a third of the world's people, which shows how concentrated the global population is.</p>
+            <p><strong>Limits:</strong> a bar chart is a single-year snapshot, so it cannot say whether a country's population is growing or shrinking; it only ranks one fixed moment.</p>
+          </div>
+        </section>
+      </div>
+
+      <div id="load-notice" class="notice" hidden>Could not load the CSV. Please open this page from the GitHub Pages URL (not file://) so the browser can download the data.</div>
+
+      <footer>
+        <nav class="page-links" aria-label="Other week 4 pages">
+          <a href="index.html">Back to the explorer</a>
+          <a href="game.html">Play the game</a>
+          <a href="../index.html">Back to the home page</a>
+        </nav>
+        <p>Data: World Bank via DataHub · Charts: Chart.js · CSV parsing: Papa Parse</p>
+      </footer>
+    </div>
+  </body>
+</html>

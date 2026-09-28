@@ -32,3 +32,23 @@ One `@media (max-width: 600px)` rule adjusts padding, title size, and turns map 
 - Photos: taken by myself.
 - Map links: Google Maps.
 - Information: Google.
+
+## Week 4 — JavaScript and the DOM
+
+This week turns the three places into one interactive explorer, adds a data page, and adds a small canvas game. Everything lives in the `week4/` folder; the earlier weekly pages stay untouched.
+
+- `week4/index.html` — **Practice 1: one explorer screen.** Three buttons switch the visible place section and the Google Maps iframe at the same time, with no page reload. `week4/styles.css` and `week4/app.js` keep the CSS and JavaScript separate.
+- `week4/statistics.html` — **Practice 2: two views of one dataset.** Reads `week4/data/population.csv` with Papa Parse and draws two Chart.js charts behind two tabs: a line chart (South Korea vs Japan, 1960–2024) and a bar chart (ten most populous countries, 2024), each with its own interpretation and source link.
+- `week4/game.html` — **Practice 3: a small canvas game.** "Star Catcher" — move a basket with the mouse or a finger to catch falling stars and dodge rocks for 30 seconds. It has score, lives, a timer, a game-over result, and a restart button.
+
+### How the data page works
+
+The CSV comes from [DataHub](https://datahub.io/core/population) (original source: the World Bank). It has the columns `Country Name`, `Country Code`, `Year`, and `Value`, one row per country per year from 1960 to 2024. The line chart filters the `KOR` and `JPN` rows and maps `Year -> x` and `Value -> y`; the bar chart keeps only the `Year === "2024"` rows for a fixed list of ten country codes, so aggregate rows such as "World" never appear.
+
+### Game improvement
+
+After the first playable version, I slowed the starting fall speed and made the objects speed up gradually as the round goes on, so the game feels fair at the start and harder near the end. I also scaled the basket position from the pointer's screen coordinates using `getBoundingClientRect` so touching anywhere on the canvas on mobile maps correctly.
+
+### AI assistance
+
+I used an AI assistant (Copilot/TRAE) while building this week. One representative question I asked: *"Read `population.csv` with Papa Parse and draw a line chart of KOR and JPN per year, plus a bar chart of the top ten countries in 2024, behind two tabs."* The assistant drafted the code; I checked the CSV columns by hand, verified a few chart values against the raw numbers in the file, and typed the interpretations myself after comparing the figures.

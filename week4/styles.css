@@ -1,0 +1,292 @@
+/* =============================================
+   Week 4 · shared stylesheet
+   Covers the explorer, statistics, and game pages.
+   ============================================= */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  line-height: 1.7;
+  color: #1d2440;
+  background: #f4f6fb;
+}
+
+.wrap {
+  width: 92%;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem 0;
+}
+
+h1 {
+  margin: 0.25rem 0;
+  line-height: 1.2;
+}
+
+h2 {
+  margin-top: 0;
+  line-height: 1.3;
+}
+
+a {
+  color: inherit;
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid #2f5fe0;
+  outline-offset: 3px;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+figure {
+  margin: 1rem 0;
+}
+
+figcaption {
+  font-size: 0.85rem;
+  margin-top: 0.4rem;
+}
+
+header {
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid #c6cde0;
+}
+
+footer {
+  margin-top: 2rem;
+  padding-top: 1rem;
+  border-top: 1px solid #c6cde0;
+  font-size: 0.9rem;
+  color: #5a607a;
+}
+
+.action {
+  display: inline-block;
+  margin-top: 0.5rem;
+  padding: 0.7em 1em;
+  border: 2px solid #2f5fe0;
+  border-radius: 8px;
+  text-decoration: none;
+  color: #2f5fe0;
+}
+
+.action:hover {
+  text-decoration: underline;
+}
+
+/* =============================================
+   Explorer page
+   ============================================= */
+.place-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  padding: 1.25rem 0;
+}
+
+.place-btn {
+  padding: 0.6em 1.2em;
+  border: 2px solid #2f5fe0;
+  border-radius: 999px;
+  background: #ffffff;
+  color: #2f5fe0;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.place-btn[aria-pressed="true"] {
+  background: #2f5fe0;
+  color: #ffffff;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  align-items: stretch;
+}
+
+.place,
+.map-panel {
+  background: #ffffff;
+  border: 1px solid #dbe0ee;
+  border-radius: 12px;
+  padding: 1.25rem;
+}
+
+.reason {
+  font-size: 0.95rem;
+  color: #4a5170;
+}
+
+.map-panel iframe {
+  width: 100%;
+  height: 100%;
+  min-height: 320px;
+  border: 0;
+  border-radius: 8px;
+}
+
+.page-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.25rem;
+}
+
+/* =============================================
+   Statistics page
+   ============================================= */
+.tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  padding: 1.25rem 0;
+}
+
+.tab-btn {
+  padding: 0.6em 1.2em;
+  border: 2px solid #2f5fe0;
+  border-radius: 999px;
+  background: #ffffff;
+  color: #2f5fe0;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.tab-btn[aria-pressed="true"] {
+  background: #2f5fe0;
+  color: #ffffff;
+}
+
+.chart-card {
+  background: #ffffff;
+  border: 1px solid #dbe0ee;
+  border-radius: 12px;
+  padding: 1.25rem;
+  margin-bottom: 1.5rem;
+}
+
+.chart-card canvas {
+  width: 100% !important;
+  max-height: 340px;
+}
+
+.meta {
+  font-size: 0.85rem;
+  color: #5a607a;
+}
+
+.interpret {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px dashed #c6cde0;
+}
+
+.notice {
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  background: #fff3cd;
+  color: #7a5b00;
+  margin: 1rem 0;
+}
+
+/* =============================================
+   Game page
+   ============================================= */
+.game-shell {
+  text-align: center;
+}
+
+.hud {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  margin: 1rem 0;
+  font-size: 1.05rem;
+}
+
+.hud .label {
+  color: #5a607a;
+}
+
+.hud .value {
+  font-weight: 700;
+}
+
+canvas#game {
+  display: block;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 640px;
+  height: auto;
+  background: #131a2e;
+  border-radius: 12px;
+  touch-action: none;
+}
+
+.controls {
+  margin-top: 1rem;
+}
+
+.controls button {
+  padding: 0.7em 1.5em;
+  border: 0;
+  border-radius: 999px;
+  background: #2f5fe0;
+  color: #ffffff;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.controls button:hover {
+  background: #2449b8;
+}
+
+.result {
+  min-height: 1.4em;
+  margin-top: 0.75rem;
+  font-weight: 600;
+  color: #16315f;
+}
+
+/* =============================================
+   Mobile rules
+   ============================================= */
+@media (max-width: 660px) {
+  .wrap {
+    width: 94%;
+    padding: 1rem 0;
+  }
+
+  h1 {
+    font-size: 1.7rem;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .map-panel iframe {
+    min-height: 260px;
+  }
+
+  .place-btn,
+  .tab-btn {
+    flex: 1 1 auto;
+  }
+
+  .hud {
+    gap: 1rem;
+  }
+}
